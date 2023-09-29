@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Security.Policy;
 using URLShortener.IRepository;
 using URLShortener.Models;
 
@@ -25,6 +26,11 @@ namespace URLShortener.Repositories
         {
 
             return await _db.Urls.Where(x => x.ShortUrl == shortUrl).FirstOrDefaultAsync();
+        }
+
+        public async Task<UrlManagement> GetCurrentUrlByShortUrl(string url)
+        {
+            return await _db.Urls.Where(x => x.Url == url).FirstOrDefaultAsync();
         }
 
 

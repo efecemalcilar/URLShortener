@@ -8,7 +8,8 @@ namespace URLShortener.Mapping
         public MapProfile()
         {
             CreateMap<UrlManagement, UrlDto>().ReverseMap();
-            CreateMap<UrlManagement, SendUrlDto>().ReverseMap();
+            
+
         }
     }
 }

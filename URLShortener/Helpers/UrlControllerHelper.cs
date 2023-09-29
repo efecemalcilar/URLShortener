@@ -8,6 +8,7 @@ namespace URLShortener.Helpers
         {
             var randomUrl = Guid.NewGuid();
             return randomUrl.ToString()[..6];
+
         }
     }
 }

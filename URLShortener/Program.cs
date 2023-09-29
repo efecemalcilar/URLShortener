@@ -20,7 +20,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
     .AddFluentValidation(options =>
     {
-        options.RegisterValidatorsFromAssemblyContaining<UrlDtoValidator>();
+        options.RegisterValidatorsFromAssemblyContaining<UrlDtoValidator>();                // AddControllers = 
     });
     
 

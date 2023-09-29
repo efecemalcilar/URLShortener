@@ -43,7 +43,7 @@ namespace URLShortener.Controllers
         //}
 
         [HttpPost("Shortern")]
-        public async Task<IActionResult> SendUrl(SendUrlDto dto, string url)
+        public async Task<IActionResult> SendUrl(UrlDto dto, string url)
         {
             Uri validateUri;
             UrlManagement urlInfo;
@@ -58,9 +58,9 @@ namespace URLShortener.Controllers
             {
                 Url = _urlControllerHelper.CreateRandomShortUrl();
             }
-            dto.ShortUrl = Url;
+            dto.shortUrl = Url;
             urlInfo = await _urlService.Addasync(_mapper.Map<UrlManagement>(dto));
-            return CreateActionResult(ResultDto<SendUrlDto>.Success(201, _mapper.Map<SendUrlDto>(urlInfo)));
+            return CreateActionResult(ResultDto<UrlDto>.Success(201, _mapper.Map<UrlDto>(urlInfo)));
 
         }
 
@@ -78,9 +78,9 @@ namespace URLShortener.Controllers
                     var existingUrl = await _urlService.GetCurrentUrlByShortUrl(dto.shortUrl);
                     if (existingUrl != null)
                     {
-                        return BadRequest("This URL is already in use");
+                        return CreateActionResult(ResultDto<UrlDto>.Success(201, _mapper.Map<UrlDto>(dto)));/*BadRequest("This URL is already in use");*/
                     }
-                    urlInfo = await _urlService.Addasync(_mapper.Map<UrlManagement>(dto));
+                    urlInfo = await _urlService.Addasync(_mapper.Map<UrlManagement>(dto.Url));
 
                   
                 }
