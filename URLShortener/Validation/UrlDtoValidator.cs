@@ -8,7 +8,7 @@ namespace URLShortener.Validation
     {
         public UrlDtoValidator()
         {
-            //RuleFor(x => x.Url).NotNull().WithMessage("{PropertyName}, is required").NotEmpty().WithMessage("{PropertyName}, is required!");
+            RuleFor(x => x.Url).NotNull().WithMessage("{PropertyName}, is required").NotEmpty().WithMessage("{PropertyName}, is required!");
         }
     }
 }

@@ -34,42 +34,6 @@ namespace URLShortener.Repositories
         }
 
 
-        //public async Task<UrlManagement> GetLongUrl(string longUrl)
-        //{
-        //    return await _db.Urls.Where(x => x.Url == longUrl).FirstOrDefaultAsync();
-        //}
-
-
-
-
-
-        //public async Task<UrlManagement> ExistShortUrl(string shortUrl)
-        //{
-        //    return await _db.Urls.Where(x => x.ShortUrl == shortUrl).FirstOrDefaultAsync();
-        //}
-
-
-
-
-        //public  Task<UrlManagement> ExistLongUrl(string longUrl)
-        //{
-        //    return  _db.Urls.Where(x => x.Url == longUrl).FirstOrDefaultAsync();
-        //}
-
-
-
-        //public async Task<UrlManagement> AddShortenedUrl(string shortUrl,string url)
-        //{
-        //    var shortenedUrl = new UrlManagement()
-        //    {
-        //        ShortUrl = shortUrl,
-        //        Url = url
-        //    };
-
-        //    _db.Urls.Add(shortenedUrl);
-        //    _db.SaveChanges();
-
-        //    return  shortenedUrl;
-        //}
+       
     }
 }

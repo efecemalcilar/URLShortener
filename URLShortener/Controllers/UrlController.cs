@@ -78,7 +78,7 @@ namespace URLShortener.Controllers
                     var existingUrl = await _urlService.GetCurrentUrlByShortUrl(dto.shortUrl);
                     if (existingUrl != null)
                     {
-                        return CreateActionResult(ResultDto<UrlDto>.Success(201, _mapper.Map<UrlDto>(dto)));/*BadRequest("This URL is already in use");*/
+                        return CreateActionResult(ResultDto<UrlDto>.Success(201, _mapper.Map<UrlDto>(dto)));
                     }
                     urlInfo = await _urlService.Addasync(_mapper.Map<UrlManagement>(dto.Url));
 
